@@ -11,6 +11,7 @@ omnis.log
 *.bak
 thirdparty
 Dialog.java
+data
 
 # Compiled class file
 *.class
