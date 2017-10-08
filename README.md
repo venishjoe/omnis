@@ -10,9 +10,9 @@ Data is stored in H2 database.
 
 ## Screenshots
 
-![Screenshot][readme-data/screenshot1.png]
+![Screenshot](https://github.com/venishjoe/omnis/blob/master/readme-data/screenshot1.png)
 
-![Screenshot][readme-data/screenshot2.png]
+![Screenshot](https://github.com/venishjoe/omnis/blob/master/readme-data/screenshot2.png)
 
 ## Contact
 venish@venishjoe.net
