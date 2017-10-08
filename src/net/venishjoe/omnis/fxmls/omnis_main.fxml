@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<!--
+  ~ The MIT License (MIT)
+  ~
+  ~ Copyright (c) 2013 Venish Joe, http://venishjoe.net, venish@venishjoe.net
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in
+  ~ all copies or substantial portions of the Software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  ~ THE SOFTWARE.
+  -->
+
+<AnchorPane fx:id="omnisRootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="785.0000999999975" prefWidth="1164.0000999999975" xmlns:fx="http://javafx.com/fxml" fx:controller="net.venishjoe.omnis.controllers.OmnisGUIMainController">
+  <children>
+    <HBox fx:id="omnisMenuBarHBox" prefHeight="24.0" prefWidth="1164.0">
+      <children>
+        <MenuBar fx:id="omnisMainMenuBar" prefWidth="1164.0">
+          <menus>
+            <Menu id="omnisMainMenuFile" style="" text="File" fx:id="omnisMainMenuFile">
+              <items>
+                <MenuItem id="omnisMainMenuNewDatabase" style="" text="New Database" fx:id="omnisMainMenuNewDatabase">
+                  <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@../resources/images/menu/omnis_menu_new_db_16x16.png" preserveRatio="false" smooth="false" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                </MenuItem>
+                <MenuItem id="omnisMainMenuOpenDatabase" style="" text="Open Database" fx:id="omnisMainMenuOpenDatabase">
+                  <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@../resources/images/menu/omnis_menu_open_db_16x16.png" preserveRatio="false" smooth="false" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                </MenuItem>
+                <MenuItem id="omnisMainMenuCloseDatabase" text="Close Database" fx:id="omnisMainMenuCloseDatabase">
+                  <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@../resources/images/menu/omnis_menu_close_db_16x16.png" preserveRatio="false" smooth="false" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                </MenuItem>
+                <SeparatorMenuItem id="omnisMainMenuFileSeparator" mnemonicParsing="false" text="" fx:id="omnisMainMenuFileSeparator" />
+                <MenuItem id="omnisMainMenuFileExit" style="" text="Exit" fx:id="omnisMainMenuFileExit">
+                  <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@../resources/images/menu/omnis_menu_exit_16x16.png" preserveRatio="false" smooth="false" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                </MenuItem>
+              </items>
+            </Menu>
+            <Menu id="omnisMainMenuTools" style="" text="Tools" fx:id="omnisMainMenuTools">
+              <items>
+                <MenuItem id="omnisMainMenuOptions" style="" text="Optons" fx:id="omnisMainMenuOptions">
+                  <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@../resources/images/menu/omnis_menu_options_16x16.png" preserveRatio="false" smooth="false" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                </MenuItem>
+              </items>
+            </Menu>
+            <Menu id="omnisMainMenuHelp" text="Help" fx:id="omnisMainMenuHelp">
+              <items>
+                <MenuItem id="omnisMainMenuAbout" onAction="#omnisMenuHelpAboutClicked" style="" text="About" fx:id="omnisMainMenuAbout">
+                  <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@../resources/images/menu/omnis_menu_about_16x16.png" preserveRatio="false" smooth="false" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                </MenuItem>
+              </items>
+            </Menu>
+          </menus>
+        </MenuBar>
+      </children>
+    </HBox>
+    <SplitPane fx:id="omnisDataSplitPane" dividerPositions="0.1746987951807229" focusTraversable="true" layoutX="-1.0" layoutY="24.0" prefHeight="744.0" prefWidth="1164.0">
+      <items>
+        <AnchorPane id="omnisDataAnchorPaneLeftomnisDataAnchorPaneLeft" fx:id="omnisDataAnchorPaneLeft" minHeight="0.0" minWidth="0.0" prefHeight="743.0" prefWidth="468.0">
+          <children>
+            <Accordion fx:id="omnisDataAccordion" minWidth="201.0" prefHeight="742.0" prefWidth="201.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+          </children>
+        </AnchorPane>
+        <AnchorPane fx:id="omnisDataAnchorPaneRight" minHeight="0.0" minWidth="0.0" prefHeight="743.0" prefWidth="548.0">
+          <children>
+            <SplitPane fx:id="omnisSearchSplitPane" dividerPositions="0.2" focusTraversable="true" orientation="VERTICAL" prefHeight="742.0" prefWidth="956.0">
+              <items>
+                <AnchorPane fx:id="omnisSearchAnchorPaneTop" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                  <children>
+                    <Label fx:id="omnisSearchFreeFormLabel" layoutX="14.0" layoutY="16.0" text="Free Form Search" />
+                    <TextField fx:id="omnisSearchFreeFormTextField" layoutX="119.0" layoutY="14.0" prefWidth="824.0" promptText="Enter Search Criteria" />
+                    <Label fx:id="omnisSearchMainCatLabel" layoutX="14.0" layoutY="64.0" text="Main Category" />
+                    <ComboBox fx:id="omnisSearchMainCatCB" layoutX="119.0" layoutY="61.0" onAction="#omnisMainCategoryCBChanged" prefHeight="21.0" prefWidth="180.0" />
+                    <Label fx:id="omnisSearchSubCatLabel" layoutX="308.0" layoutY="64.0" text="Sub Category" />
+                    <ComboBox fx:id="omnisSearchSubCatCB" layoutX="397.0" layoutY="61.0" onAction="#omnisSubCategoryCBChanged" prefHeight="21.0" prefWidth="180.0" />
+                    <Label fx:id="omnisSearchStartDtLabel" layoutX="13.0" layoutY="112.0" text="Created Between" />
+                    <TextField id="omnisSearchStartDtTextBoxomnisSearchStartDtTextBox" fx:id="omnisSearchStartDtTextBox" layoutX="122.0" layoutY="110.0" prefWidth="154.0" promptText="Start Date" />
+                    <Button fx:id="startSearchButton" layoutX="549.0" layoutY="108.0" mnemonicParsing="false" onAction="#omnisSearchButtonClicked" prefHeight="27.0" prefWidth="99.0" text="Start Search" />
+                    <Button fx:id="scannerButton" layoutX="764.0" layoutY="108.0" mnemonicParsing="false" onAction="#omnisScannerButtonClicked" prefHeight="27.0" prefWidth="84.0" text="Scanner" />
+                    <TextField fx:id="omnisSearchFileSizeTextBox" layoutX="848.0" layoutY="56.0" prefWidth="92.0" promptText="Size in MB" />
+                    <ComboBox fx:id="omnisSearchFileSizeCB" layoutX="674.0" layoutY="58.0" onAction="#omnisSearchFileSizeTypeChanged" prefHeight="21.0" prefWidth="153.0" />
+                    <Label fx:id="omnisSearchFileSizeLabel" layoutX="605.0" layoutY="62.0" text="File Size" />
+                    <Label fx:id="omnisSearchEndDtLabel" layoutX="290.0" layoutY="113.0" text="and" />
+                    <TextField fx:id="omnisSearchEndDtTextBox" layoutX="327.0" layoutY="111.0" prefWidth="153.0" promptText="End Date" />
+                    <Button fx:id="reportsButton" layoutX="856.0" layoutY="107.0" mnemonicParsing="false" onAction="#omnisReportsButtonClicked" prefHeight="27.0" prefWidth="84.0" text="Reports" />
+                    <Button id="startSearchButton" fx:id="editorButton" layoutX="672.0" layoutY="108.0" mnemonicParsing="false" onAction="#omnisEditorButtonClicked" prefHeight="27.0" prefWidth="84.0" text="Editor" />
+                  </children>
+                </AnchorPane>
+                <AnchorPane fx:id="omnisSearchAnchorPaneBottom" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                  <children>
+                    <TableView fx:id="omnisDataTableView" onMouseClicked="#omnisDataTableRecordClick" prefHeight="589.0" prefWidth="954.0" />
+                  </children>
+                </AnchorPane>
+              </items>
+            </SplitPane>
+          </children>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+    <AnchorPane fx:id="omnisStatusBarAPane" layoutX="1.0" layoutY="767.0" prefHeight="21.0" prefWidth="1164.0">
+      <children>
+        <HBox fx:id="omnisStatusBarHBox" prefHeight="21.0" prefWidth="1164.0" style="-fx-background-color: gainsboro" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      </children>
+    </AnchorPane>
+  </children>
+</AnchorPane>

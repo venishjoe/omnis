@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<!--
+  ~ The MIT License (MIT)
+  ~
+  ~ Copyright (c) 2013 Venish Joe, http://venishjoe.net, venish@venishjoe.net
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in
+  ~ all copies or substantial portions of the Software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  ~ THE SOFTWARE.
+  -->
+
+<AnchorPane id="AnchorPane" fx:id="omnisEditorRootAP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="701.0" xmlns:fx="http://javafx.com/fxml" fx:controller="net.venishjoe.omnis.controllers.OmnisGUIEditorController">
+  <children>
+    <SplitPane fx:id="omnisEditorRootSP" dividerPositions="0.31187410586552217" focusTraversable="true" prefHeight="580.0" prefWidth="701.0">
+      <items>
+        <AnchorPane fx:id="omnisEditorAP2" minHeight="0.0" minWidth="0.0">
+          <children>
+            <TreeView fx:id="omnisEditorTree" prefHeight="578.0" prefWidth="215.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+          </children>
+        </AnchorPane>
+        <AnchorPane fx:id="omnisEditorAP3" minHeight="0.0" minWidth="0.0" prefHeight="578.0" prefWidth="326.0">
+          <children>
+            <Button fx:id="omnisEditorCloseButton" layoutX="361.0" layoutY="543.0" mnemonicParsing="false" onAction="#omnisEditorCloseButtonClicked" prefHeight="27.0" prefWidth="104.0" text="Close Window" />
+            <GridPane id="GridPane" fx:id="omnisEditorGridPane" layoutX="16.0" layoutY="51.0" prefHeight="73.0" prefWidth="449.0">
+              <children>
+                <Label fx:id="omnisEditorMainCatLbl" text="Main Category" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="omnisEditorMainCatTxt" prefWidth="330.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label fx:id="omnisEditorSubCatLbl" text="Sub Category" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <TextField fx:id="omnisEditorSubCatTxt" prefWidth="330.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+            <Separator fx:id="omnisEditorSeparator" layoutY="535.0" prefWidth="478.0" />
+            <TableView fx:id="omnisEditorScanTable" layoutX="15.0" layoutY="216.0" onMouseClicked="#omnisEditorTableRecordClick" prefHeight="247.0" prefWidth="449.0" />
+            <Label fx:id="omnisEditorCatIconLbl" layoutX="18.0" layoutY="139.0" text="Category Icon" />
+            <ImageView fx:id="omnisEditorCatImgView" fitHeight="35.0" fitWidth="35.0" layoutX="115.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="omnisEditorTitleLbl" layoutX="13.0" layoutY="6.0" text="Omnis Editor">
+              <effect>
+                <Glow />
+              </effect>
+              <font>
+                <Font size="24.0" />
+              </font>
+            </Label>
+            <TextField fx:id="omnisEditorIconTxt" editable="false" layoutX="162.0" layoutY="137.0" prefWidth="275.0" />
+            <HBox id="omnisEditorAddHL" fx:id="omnisEditorEditDirScanHBox" layoutX="18.0" layoutY="471.0" prefHeight="22.0" prefWidth="444.0" spacing="5.0">
+              <children>
+                <ComboBox fx:id="omnisEditorNewDirCB" onAction="#omnisEditorScanTypeCatCBChanged" prefHeight="21.0" prefWidth="97.0" />
+                <TextField fx:id="omnisEditorNewDirTxt" editable="false" prefWidth="335.0" promptText="Click Button to Choose Directory" />
+                <ImageView fx:id="omnisEditorFileChooserIV" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#omnisEditorDirChooserOnClick" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@../resources/images/assets/omnis_documents_32x32.png" preserveRatio="false" smooth="false" />
+                  </image>
+                </ImageView>
+              </children>
+            </HBox>
+            <Button fx:id="omnisEditorDeleteCatButton" layoutX="356.0" layoutY="176.0" mnemonicParsing="false" prefHeight="21.0" text="Delete Category" />
+            <Separator layoutX="1.0" layoutY="207.0" prefWidth="478.0" />
+            <HBox layoutX="326.0" layoutY="502.0" prefHeight="27.0" prefWidth="138.0" spacing="15.0">
+              <children>
+                <Button fx:id="omnisEditorNewDirAddButton" mnemonicParsing="false" onAction="#omnisEditorAddDirButtonClicked" prefWidth="59.0" text="Add" />
+                <Button fx:id="omnisEditorNewDirDeleteButton" mnemonicParsing="false" onAction="#omnisEditorDeleteDirButtonClicked" prefWidth="59.0" text="Delete" />
+              </children>
+            </HBox>
+            <Button id="omnisEditorDeleteCatButton" fx:id="omnisEditorAddCatButton" layoutX="238.0" layoutY="176.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="104.0" text="Add Category" />
+            <TextField fx:id="omnisEditorNewDirExcTxt" layoutX="112.0" layoutY="501.0" prefWidth="205.0" promptText="Comma Separated Extensions" />
+            <Label id="omnisEdiror" fx:id="omnisEditorNewDirExcLbl" layoutX="18.0" layoutY="504.0" text="Ignore Extensions" />
+            <TextField fx:id="_H_omnisEditorHiddenSubCatId" editable="false" focusTraversable="false" layoutX="16.0" layoutY="176.0" prefWidth="11.0" visible="false" />
+            <TextField fx:id="_H_omnisEditorHiddenMainCat" editable="false" layoutX="32.0" layoutY="176.0" prefWidth="11.0" visible="false" />
+            <TextField fx:id="_H_omnisEditorHiddenIsSubCat" editable="false" layoutX="47.0" layoutY="176.0" prefWidth="11.0" visible="false" />
+            <ImageView fx:id="omisEditorAddCatIconIV" fitHeight="20.0" fitWidth="20.0" layoutX="446.0" layoutY="139.0" onMouseClicked="#omnisEditorIconChooserOnClick" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../resources/images/assets/omnis_add_image_32x32.png" preserveRatio="false" smooth="false" />
+              </image>
+            </ImageView>
+          </children>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+    <AnchorPane fx:id="omnisEditorAP4" layoutY="580.0" prefHeight="14.0" prefWidth="701.0">
+      <children>
+        <HBox fx:id="omnisEditorStatusBarHB" prefHeight="22.0" prefWidth="568.0" style="-fx-background-color: gainsboro" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      </children>
+    </AnchorPane>
+  </children>
+</AnchorPane>

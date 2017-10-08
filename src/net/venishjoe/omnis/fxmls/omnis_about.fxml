@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<!--
+  ~ The MIT License (MIT)
+  ~
+  ~ Copyright (c) 2013 Venish Joe, http://venishjoe.net, venish@venishjoe.net
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in
+  ~ all copies or substantial portions of the Software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  ~ THE SOFTWARE.
+  -->
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="296.0" prefWidth="530.0" xmlns:fx="http://javafx.com/fxml" fx:controller="net.venishjoe.omnis.controllers.OmnisGUIAboutController">
+  <children>
+    <ImageView fx:id="omnisAboutImageView" fitHeight="211.0" fitWidth="211.0" layoutX="14.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../resources/images/core/omnis_256x256.png" preserveRatio="false" smooth="false" />
+      </image>
+    </ImageView>
+    <Label fx:id="omnisAboutTitleLabel" layoutX="287.0" layoutY="14.0" prefWidth="180.0">
+      <effect>
+        <Glow />
+      </effect>
+      <font>
+        <Font name="Arial Black" size="48.0" />
+      </font>
+    </Label>
+    <Label fx:id="omnisAboutVersionLabel" layoutX="287.0" layoutY="92.0" />
+    <Label fx:id="omnisAboutBuildLabel" layoutX="363.0" layoutY="92.0" />
+    <Label fx:id="omnisAboutAuthorKeyLabel" layoutX="287.0" layoutY="122.0" text="Author:" />
+    <Label fx:id="omnisAboutAuthorValueLabel" layoutX="346.0" layoutY="122.0" />
+    <Label fx:id="omnisAboutWebKeyLabel" layoutX="287.0" layoutY="140.0" text="Website:" />
+    <Label fx:id="omnisAboutWebValueLabel" layoutX="346.0" layoutY="140.0" />
+    <Label fx:id="omnisAboutSuppKeyLabel" layoutX="287.0" layoutY="159.0" text="Support:" />
+    <Label fx:id="omnisAboutSuppValueLabel" layoutX="346.0" layoutY="159.0" />
+    <TextArea fx:id="omnisAboutCopyrightTextArea" editable="false" layoutX="287.0" layoutY="185.0" prefHeight="58.0" prefWidth="200.0" wrapText="true" />
+    <Hyperlink fx:id="omnisAboutCopyrightHLink" layoutX="289.0" layoutY="243.0" />
+  </children>
+</AnchorPane>
